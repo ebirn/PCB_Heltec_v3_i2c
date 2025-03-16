@@ -1,13 +1,15 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "d3cc0e8d-172f-4249-bc8f-c47f8e60422a")
 	(paper "A4")
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Pin"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -81,21 +83,53 @@
 				)
 			)
 			(symbol "Conn_01x04_Pin_1_1"
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
 					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+						(xy 1.27 2.54) (xy 0.8636 2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -119,7 +153,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -129,48 +163,16 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(pin passive line
@@ -246,6 +248,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ESP32_LORA_V2.0:ESP32_LORA_V2.0"
 			(pin_names
@@ -430,17 +433,17 @@
 						(type background)
 					)
 				)
-				(pin bidirectional line
-					(at -55.88 -2.54 0)
+				(pin input line
+					(at -55.88 17.78 0)
 					(length 5.08)
-					(name "LORA_MISO/UO_CTS/V_SPI_Q/GPIO19/19"
+					(name "~{RST}"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J2_10"
+					(number "J2_7"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -449,16 +452,52 @@
 					)
 				)
 				(pin bidirectional line
-					(at 55.88 2.54 180)
+					(at -55.88 12.7 0)
 					(length 5.08)
-					(name "V_SPI_D/GPIO23/23"
+					(name "U0_TXD/GPIO1/TX"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J2_11"
+					(number "J2_6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -55.88 10.16 0)
+					(length 5.08)
+					(name "U0_RXD/GPIO3/RX"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -55.88 5.08 0)
+					(length 5.08)
+					(name "LORA_RST/TOUCH6/ADC2_6/GPIO14/14"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_15"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -502,287 +541,17 @@
 						)
 					)
 				)
-				(pin bidirectional clock
-					(at -55.88 -17.78 0)
-					(length 5.08)
-					(name "OLED_SCL/TOUCH3/HSPI_CSO/ADC2_3/GPIO15/15"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_14"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
 				(pin bidirectional line
-					(at 55.88 -5.08 180)
+					(at -55.88 -2.54 0)
 					(length 5.08)
-					(name "TOUCH2/HSPI_WP/ADC2_2/GPIO2/2"
+					(name "LORA_MISO/UO_CTS/V_SPI_Q/GPIO19/19"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J2_15"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -55.88 -20.32 0)
-					(length 5.08)
-					(name "OLED_SDA/TOUCH0/HSPI_HD/ADC2_0/GPIO4/4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_16"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 55.88 5.08 180)
-					(length 5.08)
-					(name "U2_TXD/GPIO17/17"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_17"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -55.88 -22.86 0)
-					(length 5.08)
-					(name "OLED_RST/U2_RXD/GPIO16/16"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_18"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 55.88 22.86 180)
-					(length 5.08)
-					(name "VEXT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -55.88 10.16 0)
-					(length 5.08)
-					(name "U0_RXD/GPIO3/RX"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -55.88 12.7 0)
-					(length 5.08)
-					(name "U0_TXD/GPIO1/TX"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -55.88 17.78 0)
-					(length 5.08)
-					(name "~{RST}"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 55.88 -20.32 180)
-					(length 5.08)
-					(name "PRG_BUTTON/TOUCH1/ADC2_1/GPIO0/0"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional clock
-					(at 55.88 0 180)
-					(length 5.08)
-					(name "UO_RTS/V_SPI_QP/GPIO22/SCL/22"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J2_9"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 55.88 -27.94 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J3_1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional clock
-					(at 55.88 -15.24 180)
-					(length 5.08)
-					(name "TOUCH9/ADC1_4/GPIO32/XTAL32/32"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J3_10"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional clock
-					(at 55.88 -12.7 180)
-					(length 5.08)
-					(name "TOUCH8/ADC1_5/GPIO33/XTAL32/33"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J3_11"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 55.88 7.62 180)
-					(length 5.08)
-					(name "LED/DAC2/ADC2_8/GPIO25/25"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J3_12"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -55.88 -7.62 0)
-					(length 5.08)
-					(name "LORA_DIO0/DAC1/ADC2_9/GPIO26/26"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "J3_13"
+					(number "J2_10"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -809,16 +578,16 @@
 					)
 				)
 				(pin bidirectional line
-					(at -55.88 5.08 0)
+					(at -55.88 -7.62 0)
 					(length 5.08)
-					(name "LORA_RST/TOUCH6/ADC2_6/GPIO14/14"
+					(name "LORA_DIO0/DAC1/ADC2_9/GPIO26/26"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_15"
+					(number "J3_13"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -827,16 +596,16 @@
 					)
 				)
 				(pin bidirectional line
-					(at 55.88 -10.16 180)
+					(at -55.88 -10.16 0)
 					(length 5.08)
-					(name "TOUCH5/ADC2_5/GPIO12/12"
+					(name "LORA_DIO1/ADC1_7/GPI35/35"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_16"
+					(number "J3_9"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -845,16 +614,34 @@
 					)
 				)
 				(pin bidirectional line
-					(at 55.88 -7.62 180)
+					(at -55.88 -12.7 0)
 					(length 5.08)
-					(name "TOUCH4/ADC2_4/GPIO13/13"
+					(name "LORA_DIO2/ADC1_6/GPI34/34"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_17"
+					(number "J3_8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional clock
+					(at -55.88 -17.78 0)
+					(length 5.08)
+					(name "OLED_SCL/TOUCH3/HSPI_CSO/ADC2_3/GPIO15/15"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_14"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -863,16 +650,34 @@
 					)
 				)
 				(pin bidirectional line
-					(at 55.88 -22.86 180)
+					(at -55.88 -20.32 0)
 					(length 5.08)
-					(name "VEXT_CONTROL/V_SPI_HD/GPIO21/SDA/21"
+					(name "OLED_SDA/TOUCH0/HSPI_HD/ADC2_0/GPIO4/4"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_18"
+					(number "J2_16"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -55.88 -22.86 0)
+					(length 5.08)
+					(name "OLED_RST/U2_RXD/GPIO16/16"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_18"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -909,6 +714,24 @@
 						)
 					)
 					(number "J3_3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 55.88 22.86 180)
+					(length 5.08)
+					(name "VEXT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_4"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -989,16 +812,16 @@
 					)
 				)
 				(pin bidirectional line
-					(at -55.88 -12.7 0)
+					(at 55.88 7.62 180)
 					(length 5.08)
-					(name "LORA_DIO2/ADC1_6/GPI34/34"
+					(name "LED/DAC2/ADC2_8/GPIO25/25"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_8"
+					(number "J3_12"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1007,16 +830,16 @@
 					)
 				)
 				(pin bidirectional line
-					(at -55.88 -10.16 0)
+					(at 55.88 5.08 180)
 					(length 5.08)
-					(name "LORA_DIO1/ADC1_7/GPI35/35"
+					(name "U2_TXD/GPIO17/17"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "J3_9"
+					(number "J2_17"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1024,9 +847,169 @@
 						)
 					)
 				)
-			)
-			(symbol "ESP32_LORA_V2.0_1_0"
-				(pin power_out line
+				(pin bidirectional line
+					(at 55.88 2.54 180)
+					(length 5.08)
+					(name "V_SPI_D/GPIO23/23"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional clock
+					(at 55.88 0 180)
+					(length 5.08)
+					(name "UO_RTS/V_SPI_QP/GPIO22/SCL/22"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 55.88 -5.08 180)
+					(length 5.08)
+					(name "TOUCH2/HSPI_WP/ADC2_2/GPIO2/2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_15"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 55.88 -7.62 180)
+					(length 5.08)
+					(name "TOUCH4/ADC2_4/GPIO13/13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_17"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 55.88 -10.16 180)
+					(length 5.08)
+					(name "TOUCH5/ADC2_5/GPIO12/12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_16"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional clock
+					(at 55.88 -12.7 180)
+					(length 5.08)
+					(name "TOUCH8/ADC1_5/GPIO33/XTAL32/33"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional clock
+					(at 55.88 -15.24 180)
+					(length 5.08)
+					(name "TOUCH9/ADC1_4/GPIO32/XTAL32/32"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 55.88 -20.32 180)
+					(length 5.08)
+					(name "PRG_BUTTON/TOUCH1/ADC2_1/GPIO0/0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 55.88 -22.86 180)
+					(length 5.08)
+					(name "VEXT_CONTROL/V_SPI_HD/GPIO21/SDA/21"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J3_18"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at 55.88 -27.94 180)
 					(length 5.08)
 					(name "GND"
@@ -1036,7 +1019,7 @@
 							)
 						)
 					)
-					(number "J2_1"
+					(number "J3_1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1044,6 +1027,8 @@
 						)
 					)
 				)
+			)
+			(symbol "ESP32_LORA_V2.0_1_0"
 				(pin power_out line
 					(at 55.88 25.4 180)
 					(length 5.08)
@@ -1080,7 +1065,26 @@
 						)
 					)
 				)
+				(pin power_out line
+					(at 55.88 -27.94 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "J2_1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "PCM_SL_Pin_Headers:PINHD_1x4_Female"
 			(exclude_from_sim no)
@@ -1159,93 +1163,9 @@
 						(type background)
 					)
 				)
-				(arc
-					(start -0.508 -3.81)
-					(mid -0.3592 -4.1692)
-					(end 0 -4.318)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.508 -1.27)
-					(mid -0.3592 -1.6292)
-					(end 0 -1.778)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.508 1.27)
-					(mid -0.3592 0.9108)
-					(end 0 0.762)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.508 3.81)
-					(mid -0.3592 3.4508)
-					(end 0 3.302)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -3.302)
-					(mid -0.3592 -3.4508)
-					(end -0.508 -3.81)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -0.762)
-					(mid -0.3592 -0.9108)
-					(end -0.508 -1.27)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -1.27 -3.81) (xy -0.508 -3.81)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -0.508 -1.27)
+						(xy -1.27 3.81) (xy -0.508 3.81)
 					)
 					(stroke
 						(width 0.25)
@@ -1269,7 +1189,7 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 3.81) (xy -0.508 3.81)
+						(xy -1.27 -1.27) (xy -0.508 -1.27)
 					)
 					(stroke
 						(width 0.25)
@@ -1281,79 +1201,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -4.318) (xy 1.016 -4.318)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -3.302) (xy 1.016 -3.302)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.778) (xy 1.016 -1.778)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -0.762)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.762)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.778) (xy 1.016 1.778)
-					)
-					(stroke
-						(width 0.25)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 3.302) (xy 1.016 3.302)
+						(xy -1.27 -3.81) (xy -0.508 -3.81)
 					)
 					(stroke
 						(width 0.25)
@@ -1376,9 +1224,9 @@
 					)
 				)
 				(arc
-					(start 0 1.778)
-					(mid -0.3592 1.6292)
-					(end -0.508 1.27)
+					(start -0.508 3.81)
+					(mid -0.3592 4.1692)
+					(end 0 4.318)
 					(stroke
 						(width 0.25)
 						(type default)
@@ -1388,9 +1236,165 @@
 					)
 				)
 				(arc
-					(start 0 4.318)
-					(mid -0.3592 4.1692)
+					(start 0 3.302)
+					(mid -0.3592 3.4508)
 					(end -0.508 3.81)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.302) (xy 1.016 3.302)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 1.016 1.778)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.508 1.27)
+					(mid -0.3592 1.6292)
+					(end 0 1.778)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0.762)
+					(mid -0.3592 0.9108)
+					(end -0.508 1.27)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.762)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -0.762)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.508 -1.27)
+					(mid -0.3592 -0.9108)
+					(end 0 -0.762)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.778)
+					(mid -0.3592 -1.6292)
+					(end -0.508 -1.27)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.778) (xy 1.016 -1.778)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.302) (xy 1.016 -3.302)
+					)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.508 -3.81)
+					(mid -0.3592 -3.4508)
+					(end 0 -3.302)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -4.318)
+					(mid -0.3592 -4.1692)
+					(end -0.508 -3.81)
+					(stroke
+						(width 0.25)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.318) (xy 1.016 -4.318)
+					)
 					(stroke
 						(width 0.25)
 						(type default)
@@ -1474,6 +1478,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "PCM_SL_Pin_Headers:PINHD_1x4_Male"
 			(exclude_from_sim no)
@@ -1554,7 +1559,7 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 -3.81) (xy 0 -3.81)
+						(xy -1.27 3.81) (xy 0 3.81)
 					)
 					(stroke
 						(width 0.3)
@@ -1566,31 +1571,7 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 -3.81) (xy 0 -3.81)
-					)
-					(stroke
-						(width 0.5)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0.3)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy 0 -1.27)
+						(xy -1.27 3.81) (xy 0 3.81)
 					)
 					(stroke
 						(width 0.5)
@@ -1626,7 +1607,7 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 3.81) (xy 0 3.81)
+						(xy -1.27 -1.27) (xy 0 -1.27)
 					)
 					(stroke
 						(width 0.3)
@@ -1638,7 +1619,31 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 3.81) (xy 0 3.81)
+						(xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0.5)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0.3)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy 0 -3.81)
 					)
 					(stroke
 						(width 0.5)
@@ -1723,6 +1728,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "poka-yoke_rxtx:poka_yoke_txrx"
 			(exclude_from_sim no)
@@ -1822,24 +1828,6 @@
 					)
 				)
 				(pin output line
-					(at 7.62 -1.27 180)
-					(length 2.54)
-					(name "Tx_Out"
-						(effects
-							(font
-								(size 0.9 0.9)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
 					(at 7.62 1.27 180)
 					(length 2.54)
 					(name "Rx_Out"
@@ -1857,7 +1845,26 @@
 						)
 					)
 				)
+				(pin output line
+					(at 7.62 -1.27 180)
+					(length 2.54)
+					(name "Tx_Out"
+						(effects
+							(font
+								(size 0.9 0.9)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -2063,6 +2070,16 @@
 			(type default)
 		)
 		(uuid "e249a6b1-ab50-4041-9060-d27d9338b43c")
+	)
+	(wire
+		(pts
+			(xy 166.37 49.53) (xy 166.37 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01202f34-8812-4f09-b680-2332f83cac65")
 	)
 	(wire
 		(pts
@@ -2586,16 +2603,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 49.53) (xy 166.37 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1081a83-0798-4f22-982d-135e1bdd1e34")
-	)
-	(wire
-		(pts
 			(xy 58.42 29.21) (xy 68.58 29.21)
 		)
 		(stroke
@@ -2633,6 +2640,16 @@
 			(type default)
 		)
 		(uuid "e3e49580-162a-4c84-b051-58bc1ac147bc")
+	)
+	(wire
+		(pts
+			(xy 148.59 46.99) (xy 166.37 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1df9770-cea4-4fcd-91cb-6c2ec4722122")
 	)
 	(wire
 		(pts
@@ -2693,6 +2710,16 @@
 			(justify left bottom)
 		)
 		(uuid "a014e47d-d038-45d5-b13a-4323d409554b")
+	)
+	(label "VDD"
+		(at 148.59 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b941e211-82e4-4d3b-ae77-8925a48cc989")
 	)
 	(label "SDA"
 		(at 140.97 129.54 0)
@@ -3046,7 +3073,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCB_Heltec_v3_i2c:poka-yoke_rxtx"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical"
 			(at 35.56 29.21 0)
 			(effects
 				(font
@@ -3839,4 +3866,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
